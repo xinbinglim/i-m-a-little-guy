@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bd06rdftol7mo"]
+
+[ext_resource type="Script" uid="uid://c5dkjqrebkegi" path="res://the_end.gd" id="1_6rnfd"]
+[ext_resource type="Texture2D" uid="uid://dkspkmx137xfa" path="res://a4.png" id="2_7hgbx"]
+[ext_resource type="FontFile" uid="uid://bcqxymggfckmf" path="res://minecraft/Minecraft.ttf" id="3_08u7m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp1n7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t43du"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51rdc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="The End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6rnfd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 651.0
+texture = ExtResource("2_7hgbx")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 203.0
+offset_right = 676.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.26657522, 0.2665752, 0.2665752, 1)
+theme_override_fonts/font = ExtResource("3_08u7m")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_bp1n7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t43du")
+theme_override_styles/hover = SubResource("StyleBoxFlat_51rdc")
+text = "The End"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

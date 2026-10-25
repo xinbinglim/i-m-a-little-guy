@@ -1,0 +1,253 @@
+[gd_scene load_steps=15 format=3 uid="uid://b5ehc7p64kpl7"]
+
+[ext_resource type="Texture2D" uid="uid://c7uht1ksaip7o" path="res://a2.png" id="1_na78p"]
+[ext_resource type="Texture2D" uid="uid://b8taespba352e" path="res://cursor.png" id="2_5sbhm"]
+[ext_resource type="Script" uid="uid://b6nwygyvchg37" path="res://character_body_2d.gd" id="2_vu0jf"]
+[ext_resource type="Script" uid="uid://6olhdkl8e1yk" path="res://virus.gd" id="3_7vxbr"]
+[ext_resource type="FontFile" uid="uid://bcqxymggfckmf" path="res://minecraft/Minecraft.ttf" id="4_rrs5o"]
+[ext_resource type="Texture2D" uid="uid://brg4s51tnon1" path="res://cloud.png" id="5_jjmn7"]
+[ext_resource type="Texture2D" uid="uid://wsht23mfn006" path="res://enemy.png" id="5_kkwl7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrs5o"]
+size = Vector2(1152, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vxbr"]
+size = Vector2(409, 221.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjmn7"]
+size = Vector2(175, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5ued"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nspls"]
+size = Vector2(20, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu0jf"]
+size = Vector2(14, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43xba"]
+size = Vector2(56, 616)
+
+[node name="GamePage" type="Node2D"]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -509.0
+offset_top = -204.0
+offset_right = 1691.0
+offset_bottom = 996.0
+
+[node name="bg" type="TextureRect" parent="."]
+offset_right = 1157.0
+offset_bottom = 644.0
+texture = ExtResource("1_na78p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(13, 635)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(566, -10.5)
+shape = SubResource("RectangleShape2D_rrs5o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(904, -184.5)
+shape = SubResource("RectangleShape2D_7vxbr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(917.5, -205.5)
+shape = SubResource("RectangleShape2D_jjmn7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 230.0
+offset_top = 127.0
+offset_right = 633.0
+offset_bottom = 349.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_right = 403.0
+offset_bottom = 28.0
+color = Color(4.813075e-07, 0.28961942, 0.43992418, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 45.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_rrs5o")
+text = "NOTES.TXT"
+vertical_alignment = 2
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 33.0
+offset_right = 363.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_rrs5o")
+text = "SYSTEM NOTES...
+
+Your Target:
+Jump on The top of Virus to stop Virus Attacking
+the desktop!
+
+Use W A S D to control the character...
+Shift to boost
+
+Have Fun!!!"
+vertical_alignment = 2
+
+[node name="Virus 1" type="Node2D" parent="."]
+position = Vector2(228, 574)
+script = ExtResource("3_7vxbr")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Virus 1"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_kkwl7")
+
+[node name="Body" type="Area2D" parent="Virus 1"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus 1/Body"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_p5ued")
+
+[node name="Top" type="Area2D" parent="Virus 1"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus 1/Top"]
+position = Vector2(1, -11.5)
+shape = SubResource("RectangleShape2D_nspls")
+
+[node name="Virus 2" type="Node2D" parent="."]
+position = Vector2(956, 572)
+script = ExtResource("3_7vxbr")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Virus 2"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_kkwl7")
+
+[node name="Body" type="Area2D" parent="Virus 2"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus 2/Body"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_p5ued")
+
+[node name="Top" type="Area2D" parent="Virus 2"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus 2/Top"]
+position = Vector2(1, -11.5)
+shape = SubResource("RectangleShape2D_nspls")
+
+[node name="Virus 3" type="Node2D" parent="."]
+position = Vector2(925, 329)
+script = ExtResource("3_7vxbr")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Virus 3"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_kkwl7")
+
+[node name="Body" type="Area2D" parent="Virus 3"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus 3/Body"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_p5ued")
+
+[node name="Top" type="Area2D" parent="Virus 3"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus 3/Top"]
+position = Vector2(1, -11.5)
+shape = SubResource("RectangleShape2D_nspls")
+
+[node name="Virus 4" type="Node2D" parent="."]
+position = Vector2(587, 583)
+script = ExtResource("3_7vxbr")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Virus 4"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_kkwl7")
+
+[node name="Body" type="Area2D" parent="Virus 4"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus 4/Body"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_p5ued")
+
+[node name="Top" type="Area2D" parent="Virus 4"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus 4/Top"]
+position = Vector2(1, -11.5)
+shape = SubResource("RectangleShape2D_nspls")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 66.0
+offset_top = 225.0
+offset_right = 235.0
+offset_bottom = 360.0
+texture = ExtResource("5_jjmn7")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 542.0
+offset_top = 298.0
+offset_right = 711.0
+offset_bottom = 433.0
+texture = ExtResource("5_jjmn7")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 868.0
+offset_top = 94.0
+offset_right = 1037.0
+offset_bottom = 229.0
+texture = ExtResource("5_jjmn7")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 257.0
+offset_top = 422.0
+offset_right = 426.0
+offset_bottom = 557.0
+texture = ExtResource("5_jjmn7")
+
+[node name="player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(59, 511)
+script = ExtResource("2_vu0jf")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_5sbhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource("RectangleShape2D_vu0jf")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+scale = Vector2(0.99999994, 0.99999994)
+zoom = Vector2(2, 2)
+
+[node name="Edge 1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge 1"]
+position = Vector2(1163, 286)
+shape = SubResource("RectangleShape2D_43xba")
+
+[connection signal="body_entered" from="Virus 1/Body" to="Virus 1/Body" method="_on_body_entered"]
+[connection signal="body_entered" from="Virus 1/Top" to="Virus 1/Top" method="_on_body_entered"]
+[connection signal="body_entered" from="Virus 2/Body" to="Virus 2/Body" method="_on_body_entered"]
+[connection signal="body_entered" from="Virus 2/Top" to="Virus 2/Top" method="_on_body_entered"]
+[connection signal="body_entered" from="Virus 3/Body" to="Virus 3/Body" method="_on_body_entered"]
+[connection signal="body_entered" from="Virus 3/Top" to="Virus 3/Top" method="_on_body_entered"]
+[connection signal="body_entered" from="Virus 4/Body" to="Virus 4/Body" method="_on_body_entered"]
+[connection signal="body_entered" from="Virus 4/Top" to="Virus 4/Top" method="_on_body_entered"]
+[connection signal="body_entered" from="Edge 1" to="player" method="_on_edge_1_body_entered"]

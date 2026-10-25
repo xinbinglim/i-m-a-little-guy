@@ -1,0 +1,8 @@
+res://game_page.tscn
+res://virus.gd
+res://character_body_2d.gd
+res://menu.gd
+res://Menu.tscn
+res://game_page_2.tscn
+res://game_page_2.gd
+res://the_end.gd

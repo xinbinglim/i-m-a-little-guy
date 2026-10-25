@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8b6l6rt4y0f1"]
+
+[ext_resource type="Texture2D" uid="uid://dkspkmx137xfa" path="res://a4.png" id="1_uubjt"]
+[ext_resource type="Script" uid="uid://caf2utunowxxp" path="res://menu.gd" id="1_ylpcl"]
+[ext_resource type="FontFile" uid="uid://bcqxymggfckmf" path="res://minecraft/Minecraft.ttf" id="2_5yleq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylpcl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx167"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dolsu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ylpcl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -14.0
+offset_right = 1296.0
+offset_bottom = 678.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_right = 1118.0
+offset_bottom = 650.0
+texture = ExtResource("1_uubjt")
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 206.0
+offset_right = 626.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.26657522, 0.2665752, 0.2665752, 1)
+theme_override_fonts/font = ExtResource("2_5yleq")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ylpcl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cx167")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dolsu")
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

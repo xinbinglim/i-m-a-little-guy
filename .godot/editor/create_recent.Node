@@ -1,0 +1,13 @@
+TextureRect
+CollisionShape2D
+Area2D
+Control
+Label
+Camera2D
+Node2D
+Sprite2D
+Label      - Matches the "text" keyword.
+ColorRect
+StaticBody2D
+CharacterBody2D
+Button
